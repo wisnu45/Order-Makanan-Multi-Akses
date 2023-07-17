@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="/js/admin.js"></script>
+    <title>Manage Menus</title>
+  </head>
+  <body>  
+    <input value={{user}} id="user" hidden></input>
+    <nav class="navbar navbar-expand-sm bg-dark">
+          <ul class="navbar-nav">
+            <li class="nav-itm">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+    <div class="container py-5" style="height: 200px;">
+      <div class="col mx-auto" style="width: 600px;">  
+        
+            <div class="container py-5" >      
+              <h2>Add Menu Item</h2>        
+            </div>
+            <form id="aif">
+              <div class="form-group" id="rests_aif">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_aif" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_aif">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <div class = "row">
+                <div class = "col-8">
+                  <label >Item Name </label>
+                  <input type="text" class="form-control" id="in_aif"  required>
+                  </div>
+                <div class="col">
+                    <label >Base Price  </label>
+                    <input type="number" class="form-control" id="bp_aif"  required>  
+                </div>
+              </div>
+               </div>
+              <button type="submit" class="btn btn-primary " id="save_aif">Add</button>
+    
+              <div id="res_aif"></div>
+             
+              </form>
+
+               <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Modify Menu Item</h2>        
+            </div>
+            <form id="mif">
+              <div class="form-group" id="rests_mif">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_mif" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_mif">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <div class = "row">
+                <div class = "col-8">
+                  <label >Item Name </label>
+                  <input type="text" class="form-control" id="in_mif"  required>
+                  </div>
+                <div class="col">
+                    <label >Base Price  </label>
+                    <input type="number" class="form-control" id="bp_mif"  required>  
+                </div>
+              </div>
+               </div>
+              <button type="submit" class="btn btn-primary " id="save_mif">Modify</button>
+    
+              <div id="res_mif"></div>
+             
+              </form>
+
+              <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Remove Menu Item</h2>        
+            </div>
+            <form id="rif">
+              <div class="form-group" id="rests_rif">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_rif" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_rif">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <label>Item Name</label>
+                <input type="text" class="form-control" id="in_rif" required>
+              </div>
+              <button type="submit" class="btn btn-primary " id="save_rif">Remove</button>
+    
+              <div id="res_rif"></div>
+             
+              </form>
+
+                <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Add Menu Item Configuration</h2>        
+            </div>
+            <form id="aic">
+              <div class="form-group" id="rests_aic">
+                <label >Restaurant Name</label>
+                <select type="text" class="form-control" id="rests_select_aic" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_aic">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <div class = "row">
+                <div class = "col">
+                  <label >Item Name </label>
+                  <input type="text" class="form-control" id="in_aic"  required>
+                  </div>
+                <div class="form-group">
+                    <label >Config Name  </label>
+                      <select class="col" style="height:37px;"id ="select_cn_aic">
+                       <option value='Small'>Small</option>
+                       <option value='Regular'>Regular</option>
+                       <option value='Large'>Large</option>
+                       <option value='Combo - Small'>Combo - Small</option>
+                       <option value='Combo - Regular'>Combo - Regular</option>
+                       <option value='Combo - Large'>Combo - Large</option>
+                    </select>
+                </div>
+              </div>
+               </div>
+              <button type="submit" class="btn btn-primary " id="save_aic">Add</button>
+    
+              <div id="res_aic"></div>
+             
+              </form>
+
+              <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Remove Menu Item Configuration</h2>        
+            </div>
+            <form id="ric">
+              <div class="form-group" id="rests_ric">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_ric" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_ric">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <div class = "row">
+                <div class = "col">
+                  <label >Item Name </label>
+                  <input type="text" class="form-control" id="in_ric"  required>
+                  </div>
+                <div class="form-group">
+                    <label >Config Name  </label>
+                      <select class="col" style="height:37px;"id ="select_cn_ric">
+                       <option value='Small'>Small</option>
+                       <option value='Regular'>Regular</option>
+                       <option value='Large'>Large</option>
+                       <option value='Combo - Small'>Combo - Small</option>
+                       <option value='Combo - Regular'>Combo - Regular</option>
+                       <option value='Combo - Large'>Combo - Large</option>
+                    </select>
+                </div>
+              </div>
+               </div>
+              <button type="submit" class="btn btn-primary " id="save_ric">Remove</button>
+    
+              <div id="res_ric"></div>
+             
+              </form>
+              
+
+      </div>
+
+    </div>
+  </body>
+</html>

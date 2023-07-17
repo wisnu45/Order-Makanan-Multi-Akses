@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="/js/admin.js"></script>
+    <title>Manage Admins and Staff</title>
+  </head>
+  <body>  
+    <input value={{user}} id="user" hidden></input>
+    <nav class="navbar navbar-expand-sm bg-dark">
+          <ul class="navbar-nav">
+            <li class="nav-itm">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+    <div class="container py-5" style="height: 200px;">
+      <div class="col mx-auto" style="width: 600px;">  
+        <div class="row mx-auto" >       
+          <h2>Add Admin</h2>        
+        </div>
+
+
+        <form id="aaf">
+          <div class="form-group">
+            <label >Username</label>
+            <input type="text" class="form-control" id="uname_aaf" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="pwd_aaf" required>
+          </div>
+          <div class="form-group">
+            <div class = "row">
+               <div class = "col">
+                <label >First Name</label>
+                <input type="text" class="form-control" id="fname_aaf"  required>
+               </div>
+                <div class="col">
+                  <label >Last Name</label>
+                  <input type="text" class="form-control" id="lname_aaf"  required>  
+              </div>
+            </div>
+          </div>
+          <div class = "form-group" >
+             <label >Phone Number</label>
+            <input type="text" class="form-control" id="num_aaf"  required>
+          </div>
+          <div class="form-group">
+             <div class = "row">
+                 
+                 <div class="col">
+                   <label >Birthday</label>
+                    <input type="number" placeholder="dd" class="form-control" id="day_aaf" required>
+                 </div>
+                  <div class="col">
+                      <label style="color:white;">Birthday</label>
+                       <input type="number" placeholder="mm" class="form-control" id="month_aaf"  required>
+                  </div>
+                  <div class="col">
+                       <label  style="color:white;">Birthday</label>
+                       <input type="number" placeholder="yyyy" class="form-control" id="year_aaf" required>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="form-group">
+               <label >Email</label>
+                   <input type="text" class="form-control" id="email_aaf"  required>
+          </div>
+          <div class = "row">
+              <div class = "col">
+                <button type="submit" class="btn btn-primary " id="save_aaf">Add</button>
+
+              <div id="res_aaf"></div>
+              </div>
+          </div>
+        </form>
+          
+
+          <!-- here -->
+        
+        <div class="container py-5" >
+              <h2>Change Admin's Password</h2>        
+            </div>
+          <form id="cap">
+            <div class="form-group" id="admins_cap">
+              <label >Admin Username</label>
+              <select class="form-control" id="admins_select_cap" ></select>
+            </div>
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" class="form-control" id="pwd_cap" >
+            </div>
+            <button type="submit" class="btn btn-primary " id="save_cap">Modify</button>
+            <div id="res_cap"></div>
+          </form>
+          <!-- end -->
+        
+
+               <!-- here -->
+        <div class="container py-5" >
+              <h2>Remove Admin</h2>        
+            </div>
+          <form id="raf">
+            <div class="form-group" id="admins_raf">
+              <label >Admin Username</label>
+              <select class="form-control" id="admins_select_raf" ></select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary " id="save_raf">Remove</button>
+            <div id="res_raf"></div>
+          </form>
+          <!-- end -->
+
+        <!-- here -->
+        <div class="container py-5" >     
+          <h2>Add Ordering Staff</h2>        
+        </div>
+        <form id="asf">
+          <div class="form-group">
+            <label >Username</label>
+            <input type="text" class="form-control" id="uname_asf" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="pwd_asf" required>
+          </div>
+          <div class="form-group">
+              <div class = "row">
+              <div class = "col">
+                <label >First Name</label>
+                <input type="text" class="form-control" id="fname_asf"  required>
+                </div>
+              <div class="col">
+                  <label >Last Name</label>
+                  <input type="text" class="form-control" id="lname_asf"  required>  
+              </div>
+            </div>
+          </div>
+          <div class = "form-group" >
+              <label >Phone Number</label>
+              <input type="text" class="form-control" id="num_asf"  required>
+            </div>
+            <div class="form-group">
+                <div class = "row">
+                  
+                    <div class="col">
+                        <label >Birthday</label>
+                        <input type="number" placeholder="dd"  class="form-control" id="day_asf" required>
+                      </div>
+                      <div class="col">
+                          <label style="color:white;">Birthday</label>
+                          <input type="number" placeholder="mm"  class="form-control" id="month_asf"  required>
+                        </div>
+                        <div class="col">
+                            <label  style="color:white;">Birthday</label>
+                            <input type="number" placeholder="yyyy"  class="form-control" id="year_asf" required>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" class="form-control" id="email_asf"  required>
+                  </div>
+          <div class = "row">
+          <div class = "col">
+          <button type="submit" class="btn btn-primary " id="save_asf">Add</button>
+
+          <div id="res_asf"></div>
+          </div>
+          </div>
+          </form>
+          <!-- end -->
+
+
+          <!-- here -->
+        
+        <div class="container py-5" >
+              <h2>Change Ordering Staff's Password</h2>        
+            </div>
+          <form id="csp">
+            <div class="form-group" id="staffs_csp">
+              <label >Staff Username</label>
+              <select class="form-control" id="staffs_select_csp" ></select>
+            </div>
+            <div class="form-group" >
+              <label>New Password</label>
+              <input type="password" class="form-control" id="pwd_csp" >
+            </div>
+            <button type="submit" class="btn btn-primary " id="save_csp">Modify</button>
+            <div id="res_csp"></div>
+          </form>
+          <!-- end -->
+        
+           <!-- here -->
+        <div class="container py-5" >
+              <h2>Remove Ordering Staff</h2>        
+        </div>
+          <form id="rsf">
+            <div class="form-group"id="staffs_rsf">
+              <label >Staff Username</label>
+              <select class="form-control" id="staffs_select_rsf" ></select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary " id="save_rsf">Remove</button>
+            <div id="res_rsf"></div>
+          </form>
+        
+              
+
+      </div>
+
+    </div>
+  </body>
+</html>

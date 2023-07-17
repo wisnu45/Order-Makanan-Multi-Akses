@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="/js/admin.js"></script>
+    <title>Manage Discounts</title>
+  </head>
+  <body>  
+    <input value={{user}} id="user" hidden></input>
+    <nav class="navbar navbar-expand-sm bg-dark">
+          <ul class="navbar-nav">
+            <li class="nav-itm">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+    <div class="container py-5" style="height: 200px;">
+      <div class="col mx-auto" style="width: 600px;">  
+                      <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Add Discount Code</h2>        
+            </div>
+            <form id="adc">
+              <div class="form-group">
+                  <label >Discount Code </label>
+                  <input type="text" class="form-control" id="code_adc" >
+                </div>
+              <div class="form-group">
+             <div class = "row">
+                
+                 <div class="col">
+                   <label >Expiry Date</label>
+                    <input type="number" placeholder="dd" class="form-control" id="day_adc" required>
+                 </div>
+                  <div class="col">
+                      <label style="color:white;">Birthday</label>
+                       <input type="number" placeholder="mm" class="form-control" id="month_adc"  required>
+                  </div>
+                  <div class="col">
+                       <label  style="color:white;">Birthday</label>
+                       <input type="number" placeholder="yyyy" class="form-control" id="year_adc" required>
+                  </div>
+                  <div class="col">
+                       <label >Rate</label>
+                       <input type="number" step=any class="form-control" id="rate_adc" required>
+                  </div>
+              </div>
+              </div>
+              <button type="submit" class="btn btn-primary " id="save_adc">Add</button>
+    
+              <div id="res_adc"></div>
+             
+              </form>
+
+
+                <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Modify Discount Code</h2>        
+            </div>
+            <form id="mdc">
+              <div class="form-group" id="codes_mdc">
+                  <label >Discount Code</label>
+                  <input type="text" class="form-control" id="code_mdc" ></input>
+                </div>
+              <div class="form-group">
+             <div class = "row">
+                
+                 <div class="col">
+                   <label >Expiry Date</label>
+                    <input type="number" placeholder="dd" class="form-control" id="day_mdc" required>
+                 </div>
+                  <div class="col">
+                      <label style="color:white;">Birthday</label>
+                       <input type="number" placeholder="mm" class="form-control" id="month_mdc"  required>
+                  </div>
+                  <div class="col">
+                       <label  style="color:white;">Birthday</label>
+                       <input type="number" placeholder="yyyy" class="form-control" id="year_mdc" required>
+                  </div>
+                  <div class="col">
+                       <label>Rate</label>
+                       <input type="number" step=any class="form-control" id="rate_mdc" required>
+                  </div>
+              </div>
+              </div>
+              <button type="submit" class="btn btn-primary " id="save_mdc">Modify</button>
+    
+              <div id="res_mdc"></div>
+             
+              </form>
+
+                 <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Remove Discount Code</h2>        
+            </div>
+            <form id="rdc">
+              <div class="form-group" id="codes_rdc">
+                  <label >Discount Code</label>
+                  <select type="text" class="form-control" id="codes_select_rdc" ></select>
+                </div>
+              
+              <button type="submit" class="btn btn-primary " id="save_rdc">Remove</button>
+    
+              <div id="res_rdc"></div>
+             
+              </form>
+              
+
+      </div>
+
+    </div>
+  </body>
+</html>

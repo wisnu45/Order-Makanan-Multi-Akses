@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="/js/admin.js"></script>
+    <title>Manage Restaurants</title>
+  </head>
+  <body>  
+    <input value={{user}} id="user" hidden></input>
+    <nav class="navbar navbar-expand-sm bg-dark">
+          <ul class="navbar-nav">
+            <li class="nav-itm">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+    <div class="container py-5" style="height: 200px;">
+      <div class="col mx-auto" style="width: 600px;">  
+        
+        <div class="container py-5" >       
+          <h2>Add Restaurant</h2>        
+        </div>
+        <form id="arf">
+          <div class="form-group" id="rests_arf">
+            <label >Restaurant Name</label>
+            <input type="text" class="form-control" id="name_arf" >
+          </div>
+          <div class="form-group" id="cuisines_arf">
+            <label>Cuisine</label>
+            <select  class="form-control" id="cuisines_select_arf" ></select>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" id="add_arf" >
+          </div>
+          <div class="form-group">
+                <div class = "row">
+                <div class = "col">
+                  <label >Delivery Fee</label>
+                  <input type="number" step=any min=0 class="form-control" id="dfee_arf"  required>
+                  </div>
+                <div class="col">
+                    <label >Tax Percentage</label>
+                    <input type="number" step=any min=0 class="form-control" id="tax_arf"  required>  
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class = "row">
+              <div class = "col">
+                <label >Start Hour </label>
+                <input type="text" placeholder="hh:mm:ss" class="form-control" id="sh_arf"  required>
+                </div>
+              <div class="col">
+                  <label >End Hour  </label>
+                  <input type="text" placeholder="hh:mm:ss" class="form-control" id="eh_arf"  required>  
+              </div>
+          </div>
+          
+       </div>
+          <button type="submit" class="btn btn-primary " id="save_arf">Add</button>
+          
+          <div id="res_arf"></div>
+          </form>
+          <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Modify Restaurant</h2>        
+            </div>
+            <form id="mrf">
+              <div class="form-group" id="rests_mrf">
+                <label >Restaurant Name</label>
+                <select  class="form-control" id="rests_select_mrf" ></select>
+              </div>
+              <div class="form-group" id="cuisines_mrf">
+                <label>Cuisine</label>
+                <select  class="form-control" id="cuisines_select_mrf" ></select>
+              </div>
+              <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" id="add_mrf" >
+              </div>
+              <div class="form-group">
+                  <div class = "row">
+                  <div class = "col">
+                    <label >Delivery Fee</label>
+                    <input type="number" min=0 step=any class="form-control" id="dfee_mrf"  required>
+                    </div>
+                  <div class="col">
+                      <label >Tax Percentage</label>
+                      <input type="number" step=any min=0 class="form-control" id="tax_mrf"  required>  
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class = "row">
+                <div class = "col">
+                  <label >Start Hour </label>
+                  <input type="text" placeholder="hh:mm:ss" class="form-control" id="sh_mrf"  required>
+                  </div>
+                <div class="col">
+                    <label >End Hour  </label>
+                    <input type="text" placeholder="hh:mm:ss" class="form-control" id="eh_mrf"  required>  
+                </div>
+              </div>
+               </div>
+             
+              <button type="submit" class="btn btn-primary " id="save_mrf">Modify</button>
+    
+              <div id="res_mrf"></div>
+             
+              </form>
+              <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Remove Restaurant</h2>        
+            </div>
+            <form id="rrf">
+              <div class="form-group" id = "rests_rrf">
+                <label >Restaurant Name</label>
+                <select type="text" class="form-control" id="rests_select_rrf" ></select>
+              </div>              
+              <button type="submit" class="btn btn-primary " id="save_rrf">Remove</button>    
+              <div id="res_rrf"></div>
+             
+              </form>
+
+           <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Add Delivery Area</h2>        
+            </div>
+            <form id="daf">
+              <div class="form-group" id="rests_daf">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_daf" ></select>
+              </div>
+              <div class="form-group" id="areas_daf">
+                    <label >Area: </label>
+                      <select class="col"style="height:37px;" id ="areas_select_daf">
+                    </select>
+                </div>
+              <button type="submit" class="btn btn-primary " id="save_daf">Add</button>
+    
+              <div id="res_daf"></div>
+             
+              </form>
+        <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Remove Delivery Area</h2>        
+            </div>
+            <form id="drf">
+              <div class="form-group" id="rests_drf">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_drf" ></select>
+              </div>
+              <div class="form-group" id="areas_drf">
+                    <label >Area: </label>
+                      <select class="col"style="height:37px;" id ="areas_select_drf">
+                    </select>
+                </div>
+              <button type="submit" class="btn btn-primary " id="save_drf">Remove</button>
+    
+              <div id="res_drf"></div>
+             
+              </form>
+              <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Add Menu</h2>        
+            </div>
+            <form id="amf">
+              <div class="form-group" id="rests_amf">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_amf" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_amf">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <div class = "row">
+                <div class = "col">
+                  <label >Start Hour </label>
+                  <input type="text" placeholder="hh:mm:ss" class="form-control" id="sh_amf"  required>
+                  </div>
+                <div class="col">
+                    <label >End Hour  </label>
+                    <input type="text" placeholder="hh:mm:ss" class="form-control" id="eh_amf"  required>  
+                </div>
+              </div>
+               </div>
+              <button type="submit" class="btn btn-primary " id="save_amf">Add</button>
+    
+              <div id="res_amf"></div>
+             
+              </form>
+
+              <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Modify Menu</h2>        
+            </div>
+            <form id="mmf">
+              <div class="form-group" id="rests_mmf">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_mmf" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_mmf">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+             <div class="form-group">
+                <div class = "row">
+                <div class = "col">
+                  <label >Start Hour </label>
+                  <input type="text" placeholder="hh:mm:ss" class="form-control" id="sh_mmf"  required>
+                  </div>
+                <div class="col">
+                    <label >End Hour  </label>
+                    <input type="text" placeholder="hh:mm:ss" class="form-control" id="eh_mmf"  required>  
+                </div>
+              </div>
+               </div>
+              <button type="submit" class="btn btn-primary " id="save_mmf">Modify</button>
+    
+              <div id="res_mmf"></div>
+             
+              </form>
+
+              <!-- end -->
+
+          <!-- here -->
+            <div class="container py-5" >      
+              <h2>Remove Menu</h2>        
+            </div>
+            <form id="rmf">
+              <div class="form-group" id="rests_rmf">
+                <label >Restaurant Name</label>
+                <select class="form-control" id="rests_select_rmf" ></select>
+              </div>
+              <div class="form-group">
+                    <label >Menu Type </label>
+                      <select class="col"style="height:37px;" id ="select_mtype_rmf">
+                       <option value='Breakfast'>Breakfast</option>
+                       <option value='Lunch'>Lunch</option>
+                       <option value='Dinner'>Dinner</option>
+                       <option value='Dessert'>Dessert</option>
+                    </select>
+                </div>
+              <button type="submit" class="btn btn-primary " id="save_rmf">Remove</button>
+    
+              <div id="res_rmf"></div>
+             
+              </form>
+
+      </div>
+
+    </div>
+  </body>
+</html>

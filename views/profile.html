@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="/js/profile.js"></script>
+    <title>My Profile</title>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-sm bg-dark">
+          <ul class="navbar-nav">
+            <li class="nav-itm">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+    <div class="container py-5" style="height: 200px;">
+      <div class="col mx-auto" style="width: 500px;">  
+        <div class="row mx-auto" style="width: 200px;">       
+          <h2>Change Info</h2>        
+        </div>
+        <form id="updateForm">
+          <div class="form-group">
+            <label >Username</label>
+            <input type="text" class="form-control" id="uname" value={{user}} readonly>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="pwd" value={{pwd}}>
+          </div>
+          <div class="form-group">
+              <div class = "row">
+              <div class = "col">
+                <label >First Name</label>
+                <input type="text" class="form-control" id="fname" value={{Fname}} required>
+                </div>
+              <div class="col">
+                  <label >Last Name</label>
+                  <input type="text" class="form-control" id="lname" value={{Lname}} required>  
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class = "row">
+                  <div class = "col-6" >
+                  <label >Phone Number</label>
+                  <input type="text" class="form-control" id="num" value={{phoneNo}} required>
+                    </div>
+                    <div class="col-2">
+                        <label >Birthday</label>
+                        <input type="text" class="form-control" id="day" value={{day}} required>
+                      </div>
+                      <div class="col-2">
+                          <label style="color:white;">Birthday</label>
+                          <input type="text" class="form-control" id="month" value={{month}} required>
+                        </div>
+                        <div class="col-2">
+                            <label  style="color:white;">Birthday</label>
+                            <input type="text" class="form-control"style="width:60px;" id="year" value={{year}} required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" class="form-control" id="email" value={{email}} required>
+                  </div>
+          <div class = "row">
+          <div class = "col">
+          <button type="submit" class="btn btn-primary " id="save">Save</button>
+
+          <div id="updateRes"></div>
+          </div>
+          
+        
+        
+        </form>
+        <form class="container py-5" id="addressForm">
+          <h2> Add Address</h2>
+          <div class="form-group" id="areas">
+            <label for="areas">Select Area:</label>
+            <select class="form-control" id ="areas_select" >
+            </select>
+          </div> 
+          <div class="form-group" id="add1" >
+          </div>
+          <div class = "row">
+          <div class = "col">
+          <button type="submit" class="btn btn-primary " id="add">Add</button>
+
+          <div id="addRes"></div>
+          </div>
+        
+        </form>
+
+
+        <form class="container py-5" id="addressForm1">
+          <h2> Remove Addresses</h2>
+          <div class="form-group" id="areas_m">
+            <label for="areas_m">Select Address:</label>
+            <select class="form-control" id ="areas_select_m" >
+            </select>
+          </div> 
+          <div class = "row">
+          <div class="col">
+          <button type="submit" class="btn btn-primary " id="del">Delete</button>
+          </div>
+          <div id="modRes"></div>
+        
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>
